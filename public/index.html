@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Utilisation du Canvas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Ecran d'accueil -->
+    <div id="homeScreen">
+    <h1>Bienvenue dans le jeu!</h1>
+    <button id="practicemode">practicemode</button>
+    </div>
+    <div id="connectScreen">
+        <h2>Connexion au Jeu</h2>
+        <p id="slotsInfo">0/4 joueurs connectés</p>
+        <button id="joinGame">Rejoindre le Jeu</button>
+    </div>
+
+    <!-- Écran de jeu (caché initialement) -->
+    <div id="gameScreen" style="display: none;">
+    <canvas id="monCanvas">Votre navigateur ne supporte pas le canvas.</canvas>
+    </div>
+    
+    <div id="gameContainer">
+    <script src="js/canvasSetup.js"></script>
+    <script src="js/movementLogic.js"></script>
+    <script src="js/drawAndAnimate.js"></script>
+    <script src="js/practicemode.js"></script>
+    
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/client.js"></script>
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById('monCanvas');
+            var ctx = canvas.getContext('2d');
+            window.addEventListener('resize', function() {
+                ajusterTailleCanvas(canvas);
+            });
+
+            ajusterTailleCanvas(canvas);
+            animate(ctx); // Lancer la boucle d'animation
+        };
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+    
+     
+       
+
+
+
+
+
+
+
