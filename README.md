@@ -1,3 +1,3 @@
 # pacdream
 
-// réaliser un jeux de vaisseau rever par un enfant en js 
+// réaliser un jeu de vaisseau revé par un enfant en js 
