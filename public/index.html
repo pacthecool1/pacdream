@@ -23,14 +23,16 @@
     </div>
     
     <div id="gameContainer">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/client.js"></script>
     <script src="js/canvasSetup.js"></script>
     <script src="js/movementLogic.js"></script>
     <script src="js/drawAndAnimate.js"></script>
+    <script src="js/joingame.js"></script>
     <script src="js/practicemode.js"></script>
     
     </div>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="js/client.js"></script>
+    
     <script>
         window.onload = function() {
             var canvas = document.getElementById('monCanvas');

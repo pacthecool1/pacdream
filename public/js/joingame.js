@@ -1,6 +1,4 @@
-// Établir la connexion Socket.IO
-const socket = io();
-
+document.addEventListener('DOMContentLoaded', (event) => {
 // Gestionnaire de clic pour le bouton "Rejoindre le Jeu"
 document.getElementById("joinGame").addEventListener("click", function() {
     // Envoyer une demande pour rejoindre une session de jeu
@@ -37,3 +35,5 @@ function ajusterTailleCanvas(canvas) {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
+
+});

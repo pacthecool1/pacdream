@@ -1,20 +1,18 @@
 // Objet représentant le vaisseau spatial
-var spaceship = {
-    x: 50,
-    y: 50,
-    radius: 50,
-    moveSpeed: 2,
+class Spaceship {
+    x = 50;
+    y = 50;
+    radius = 50;
+    moveSpeed = 2;
 
     // Méthode pour mettre à jour la position du vaisseau
-    updatePosition: function(canvas) {
-        if (window.etatMouvement.haut) { this.y = Math.max(0, this.y - this.moveSpeed); }
-        if (window.etatMouvement.bas) { this.y = Math.min(canvas.height - this.radius * 2, this.y + this.moveSpeed); }
-        if (window.etatMouvement.gauche) { this.x = Math.max(0, this.x - this.moveSpeed); }
-        if (window.etatMouvement.droite) { this.x = Math.min(canvas.width - this.radius * 2, this.x + this.moveSpeed); }
-    },
+    updatePosition = () => {
+        const canvas=ctx.canvas;
+        
+    }
 
     // Méthode pour dessiner le vaisseau
-    draw: function(ctx) {
+    draw = () => {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
         // Calculer les positions relatives
@@ -73,16 +71,18 @@ var spaceship = {
 };
 
 // Fonction d'animation
-function animate(ctx) {
-    spaceship.updatePosition(ctx.canvas); // Mettre à jour la position
-    spaceship.draw(ctx); // Dessiner le vaisseau
-    requestAnimationFrame(function() { animate(ctx); }); // Continuer l'animation
+function animate() {
+    for (const player in players){
+        players[player].spaceship.updatePosition(); // Mettre à jour la position
+    }
+    
+    requestAnimationFrame(function() { animate(); }); // Continuer l'animation
 }
 
 // Initialisation de l'animation
-var canvas = document.getElementById('monCanvas');
-var ctx = canvas.getContext('2d');
-animate(ctx);
+const canvas = document.getElementById('monCanvas');
+const ctx = canvas.getContext('2d');
+animate();
 
 
 
